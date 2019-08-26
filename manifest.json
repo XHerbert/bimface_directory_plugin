@@ -1,0 +1,51 @@
+{
+	
+	"manifest_version": 2,
+	"name": "Bimface API",
+	"version": "1.0.0",
+	"description": "__MSG_pluginDesc__",
+	"icons":
+	{
+		"16": "img/favicon.png",
+		"48": "img/favicon.png",
+		"128": "img/favicon.png"
+	},
+	"background":
+	{
+		"page": "background.html"
+	},
+	"browser_action": 
+	{
+		"default_icon": "img/favicon.png",
+		"default_title": "Bimface API 插件",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": 
+	[
+		{
+			
+			"matches": ["http://static.bimface.com/jssdk-apidoc/v3/*"],
+			"js": ["js/jquery-1.8.3.js", "js/content-script.js"],
+			"css": ["css/custom.css"],
+			"run_at": "document_start"
+		}
+	],
+	"permissions":
+	[
+		"contextMenus",
+		"tabs",
+		"notifications",
+		"webRequest",
+		"webRequestBlocking",
+		"storage",
+		"http://*/*",
+		"https://*/*"
+	],
+	"web_accessible_resources": ["js/inject.js"],
+	"options_ui":
+	{
+		"page": "options.html",
+		"chrome_style": true
+	},
+	"default_locale": "zh_CN"
+}
