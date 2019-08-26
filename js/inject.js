@@ -39,6 +39,7 @@ function buildDirectory() {
 	let panel = document.createElement('div');
 	panel.className = 'chrome-plugin-panel';
 	panel.innerHTML = html;
+	panel.id = "my_panel";
 
 	// 创建搜索框
 	let serach = document.createElement("div");
