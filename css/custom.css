@@ -27,11 +27,39 @@
 	overflow-x:hidden;
 }
 
+
+.chrome-plugin-panel a {
+	color: #EEE;
+    text-decoration: none;
+}
+
+.chrome-plugin-panel a:hover{
+    text-decoration: underline;
+    color: #ffee08 !important;
+}
+
 .top{
     position: fixed;
     background: rgb(50, 211, 166);
     margin-top: -100px;
     height: 80px;
+}
+
+.my-input{
+    width: 285px;
+	height :32px;
+	line-height : 16px;
+	border : 1px solid #006699;
+	font : 12px 'Microsoft Sans Serif';
+    padding : 2px;
+    margin-top: 10px;
+	color : #006699;
+	z-index: 1001;
+	border-radius : 5px;
+}
+
+#container_of_li li a:hover{
+    color: #ffee08;
 }
 
 .chrome-plugin-demo-panel a{
@@ -42,22 +70,6 @@
 .chrome-plugin-demo-panel a:hover{
     text-decoration: underline;
     color: #ffee08;
-}
-.chrome-plugin-simple-tip {
-    position: fixed;
-    left: 20px;
-    padding: 16px 10px;
-    top: 30px;
-    color: white;
-    min-width: 150px;
-	max-width: 700px;
-    border-radius: 3px;
-    text-align: center;
-    font-size: 16px;
-    background: #70a800;
-    background-image: linear-gradient(to bottom, #95cc2a, #70a800);
-    box-shadow: 0 0 3px rgba(0, 0, 0, .2);
-	transition: top .4s;
 }
 .animated {
     -webkit-animation-duration: .5s;
@@ -97,7 +109,7 @@
 }
 
 /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
-::-webkit-scrollbar
+#my_panel::-webkit-scrollbar
 {
 	width: 10px;
 	height: 10px;
@@ -105,7 +117,7 @@
 }
  
 /*定义滚动条轨道 内阴影+圆角*/
-::-webkit-scrollbar-track
+#my_panel::-webkit-scrollbar-track
 {
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 	border-radius: 4px;
@@ -113,7 +125,7 @@
 }
  
 /*定义滑块 内阴影+圆角*/
-::-webkit-scrollbar-thumb
+#my_panel::-webkit-scrollbar-thumb
 {
 	border-radius: 4px;
 	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);

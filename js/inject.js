@@ -29,9 +29,9 @@ function buildDirectory() {
 	for (let i = 0, len = attr.length; i < len; i++) {
 		let attri = attr[i];
 		if (desc[attri]) {
-			html += '<li style="cursor:pointer;line-hight:1.2em" title=' + desc[attri] + '><a style="color:#EEE;" href=#' + attri + '>' + attr[i] + '</a></li>';
+			html += '<li style="cursor:pointer;line-hight:1.2em" title=' + desc[attri] + '><a href=#' + attri + '>' + attr[i] + '</a></li>';
 		} else {
-			html += '<li style="cursor:pointer;line-hight:1.2em"><a style="color:#EEE;" href=#' + attri + '>' + attr[i] + '</a></li>';
+			html += '<li style="cursor:pointer;line-hight:1.2em"><a href=#' + attri + '>' + attr[i] + '</a></li>';
 		}
 	}
 	html += '</ul>';
@@ -46,20 +46,11 @@ function buildDirectory() {
 	top.id = 'top';
 
 	// 创建搜索框
-	let serach = document.createElement("div");
 	let input = document.createElement("input");
 	input.type = "text";
 	input.id = "search";
 	input.placeholder = "请输入过滤关键字";
-	input.style.width = "285px";
-	input.style.height = "32px";
-	input.style.lineHeight = "16px";
-	input.style.border = "1px solid #006699";
-	input.style.font = "12px 'Microsoft Sans Serif'";
-	input.style.padding = "2px";
-	input.style.color = "#006699";
-	input.style.zIndex = 1001;
-	input.style.borderRadius = "5px";
+	input.className = "my-input";
 	input.onkeyup = filterItem;
 	top.prepend(input);
 
@@ -88,7 +79,6 @@ function sendMessageToContentScriptByPostMessage(data) {
 
 function filterItem(e) {
 	let val = document.getElementById('search').value;
-	//alert((val.value));
 	let lis = document.querySelectorAll('#container_of_li li');
 	let len = lis.length;
 
@@ -105,18 +95,6 @@ function filterItem(e) {
 
 // 通过DOM事件发送消息给content-script
 (function () {
-	var customEvent = document.createEvent('Event');
-	customEvent.initEvent('myCustomEvent', true, true);
-	// 通过事件发送消息给content-script
-	function sendMessageToContentScriptByEvent(data) {
-		data = data || '你好，我是injected-script!';
-		var hiddenDiv = document.getElementById('main');
-		hiddenDiv.innerText = data
-		hiddenDiv.dispatchEvent(customEvent);
-	}
-	window.sendMessageToContentScriptByEvent = sendMessageToContentScriptByEvent;
-
-	//alert(document.getElementsByClassName('page-title')[0].innerText);
 	//TODO:生成目录
 	buildDirectory();
 
