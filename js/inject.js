@@ -41,6 +41,10 @@ function buildDirectory() {
 	panel.innerHTML = html;
 	panel.id = "my_panel";
 
+	let top = document.createElement('div');
+	top.className = 'top';
+	top.id = 'top';
+
 	// 创建搜索框
 	let serach = document.createElement("div");
 	let input = document.createElement("input");
@@ -57,11 +61,13 @@ function buildDirectory() {
 	input.style.zIndex = 1001;
 	input.style.borderRadius = "5px";
 	input.onkeyup = filterItem;
-	panel.prepend(input);
+	top.prepend(input);
 
 	let h5 = document.createElement("h5");
 	h5.innerText = 'BIMFACE API 目录';
-	panel.prepend(h5);
+	top.prepend(h5);
+
+	panel.prepend(top);
 	document.body.appendChild(panel);
 }
 
