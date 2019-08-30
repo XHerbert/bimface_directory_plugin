@@ -83,7 +83,7 @@ function filterItem(e) {
 	let len = lis.length;
 
 	for (let i = 0; i < len; i++) {
-		if (lis[i].innerText.indexOf(val) == -1) {
+		if (lis[i].innerText.indexOf(val) == -1 && lis[i].getAttribute('title').indexOf(val) == -1) {
 			lis[i].style.display = "none";
 		} else {
 			lis[i].style.display = "block";
