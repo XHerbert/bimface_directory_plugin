@@ -24,7 +24,7 @@
 	[
 		{
 			
-			"matches": ["http://static.bimface.com/jssdk-apidoc/v3/*"],
+			"matches": ["https://static.bimface.com/jssdk-apidoc/v3/*"],
 			"js": ["js/jquery-1.8.3.js", "js/content-script.js"],
 			"css": ["css/custom.css"],
 			"run_at": "document_start"
