@@ -2,7 +2,9 @@
 
 ## introduction
 
-该chrome插件用于生成`bimface`的`API`文档目录，避免低效的手工搜索方式，只支持chrome浏览器。
+该`chrome`插件用于生成`bimface`的`API`文档目录，避免低效的手工搜索方式，只支持`chrome`浏览器。
+
+![preview](https://github.com/XHerbert/bimface_directory_plugin/assets/9563026/fc2271cf-aea3-4fa4-a464-44ea8299a3c2)
 
 ## function
 
@@ -20,4 +22,8 @@
 - 打开右上角的「开发者模式」
 - 单击左上角的「加载已解压的扩展程序」
 - 选择插件目录即可
-- 访问网址 [http://static.bimface.com/jssdk-apidoc/v3/tutorial-overview.html](http://static.bimface.com/jssdk-apidoc/v3/tutorial-overview.html)
+- 访问网址 [https://bimface.com/docs/model-viewer/v1/api-reference/Glodon.Bimface.Viewer.Viewer3D.html](https://bimface.com/docs/model-viewer/v1/api-reference/Glodon.Bimface.Viewer.Viewer3D.html)
+
+## concact me
+
+xuhbd@foxmail.com
