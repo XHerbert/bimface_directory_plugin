@@ -12,15 +12,15 @@
 
 .chrome-plugin-panel {
 	width:315px;
-	height:920px;
 	position: fixed;
-	right: 10px;
-	top: 10px;
+	top: 60px;
+    bottom: 40px;
+    right: 3px;
 	background: #32D3A6;
     padding: 10px;
     padding-top: 100px;
-    box-shadow: 0px 0px 10px #002761;
-    border-radius: 3px;
+    box-shadow: 0px 0px 10px #002761
+    border-radius: 4px;
     color: white;
 	z-index:1002;
 	overflow-y:scroll;
@@ -36,6 +36,7 @@
 .chrome-plugin-panel a:hover{
     text-decoration: underline;
     color: #ffee08 !important;
+    font-weight: bold;
 }
 
 .top{
@@ -45,17 +46,20 @@
     height: 80px;
 }
 
+.top h4 {
+    margin-top: 10px;
+}
+
 .my-input{
     width: 285px;
 	height :32px;
 	line-height : 16px;
-	border : 1px solid #006699;
+	border : 1px solid #32D3A6;
 	font : 12px 'Microsoft Sans Serif';
     padding : 2px;
     margin-top: 10px;
-	color : #006699;
+	color : #32D3A6;
 	z-index: 1001;
-	border-radius : 5px;
 }
 
 #container_of_li li a:hover{
