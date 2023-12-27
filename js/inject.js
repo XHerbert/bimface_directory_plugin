@@ -3,7 +3,7 @@ function buildDirectory() {
 	let desc = [];
 	let apis = document.getElementsByTagName('h4');
 	let len = apis.length;
-	let html = '<ul id = "container_of_li" style="list-style:none;margin-left:-35px;">'
+	let html = '<ul id = "container_of_li" style="list-style:disc;margin-left:24px;">'
 	for (let ele = 0; ele < len; ele++) {
 		let current_id = apis[ele].getAttribute('id');
 		let current = apis[ele].innerText;
@@ -12,9 +12,9 @@ function buildDirectory() {
 		}
 
 		let h4sibling = '';
-		if (apis[ele].nextElementSibling.nextElementSibling) {
-			if (apis[ele].nextElementSibling.nextElementSibling.firstElementChild) {
-				h4sibling = apis[ele].nextElementSibling.nextElementSibling.firstElementChild.innerText;
+		if (apis[ele].nextElementSibling) {
+			if (apis[ele].nextElementSibling.firstElementChild) {
+				h4sibling = apis[ele].nextElementSibling.firstElementChild.innerText;
 			}
 		}
 
@@ -29,9 +29,9 @@ function buildDirectory() {
 	for (let i = 0, len = attr.length; i < len; i++) {
 		let attri = attr[i];
 		if (desc[attri]) {
-			html += '<li style="cursor:pointer;line-hight:1.2em" title=' + desc[attri] + '><a href=#' + attri + '>' + attr[i] + '</a></li>';
+			html += '<li style="cursor:pointer;line-hight:1.5em" title=' + desc[attri] + '><a href=#' + attri + '>' + attr[i] + '</a></li>';
 		} else {
-			html += '<li style="cursor:pointer;line-hight:1.2em"><a href=#' + attri + '>' + attr[i] + '</a></li>';
+			html += '<li style="cursor:pointer;line-hight:1.5em"><a href=#' + attri + '>' + attr[i] + '</a></li>';
 		}
 	}
 	html += '</ul>';
@@ -54,9 +54,9 @@ function buildDirectory() {
 	input.onkeyup = filterItem;
 	top.prepend(input);
 
-	let h5 = document.createElement("h5");
-	h5.innerText = 'BIMFACE API 目录';
-	top.prepend(h5);
+	let h4 = document.createElement("h4");
+	h4.innerText = 'BIMFACE API 目录';
+	top.prepend(h4);
 
 	panel.prepend(top);
 	document.body.appendChild(panel);
@@ -94,8 +94,6 @@ function filterItem(e) {
 }
 
 // 通过DOM事件发送消息给content-script
-(function () {
-	//TODO:生成目录
+(function () { 
 	buildDirectory();
-
 })();
